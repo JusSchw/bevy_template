@@ -1,0 +1,9 @@
+# Justfile
+
+# Define a recipe for running `cargo run` with the `dev` feature
+run-dev:
+    cargo run --features dev
+
+# Define a recipe for building with the `distribution` profile and specific features
+build-distribution:
+    cargo build --profile distribution -F tracing/release_max_level_off -F log/release_max_level_off

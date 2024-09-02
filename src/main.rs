@@ -1,14 +1,10 @@
-mod components;
-mod events;
-mod plugins;
-mod resources;
-mod states;
-mod systems;
-mod utils;
+mod logic;
+mod prelude;
 
 use bevy::prelude::*;
-use plugins::MainPlugin;
 
 fn main() {
-    App::new().add_plugins((DefaultPlugins, MainPlugin)).run();
+    App::new()
+        .add_plugins((DefaultPlugins, logic::plugin))
+        .run();
 }
